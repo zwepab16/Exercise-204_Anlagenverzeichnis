@@ -1,10 +1,6 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import javax.swing.JOptionPane;
 
 
 public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
@@ -15,6 +11,7 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
         initComponents();
         befülle();
         jTable1.setModel(model);
+        jTable1.setDefaultRenderer(Object.class, new AnlageTableRenderer());
         load();
     }
     public void befülle(){
@@ -31,8 +28,6 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
                 String[] parts = line.split(";");
                         model.add(new Anlage(Integer.parseInt(parts[1].replace(".", "")),Integer.parseInt(parts[3]), Double.parseDouble(parts[2].replace(",", ".")), parts[0]));
                     }
-            
-
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
