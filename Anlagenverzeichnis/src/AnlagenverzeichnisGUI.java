@@ -28,6 +28,11 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
         jLabel1.setText("Year");
 
         btUpdate.setText("Update Table");
+        btUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btUpdateActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -68,6 +73,11 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
+     int i=Integer.parseInt(cbJahr.getSelectedItem().toString());
+     model.berechne(i);
+    }//GEN-LAST:event_btUpdateActionPerformed
 
    
     public static void main(String args[]) {

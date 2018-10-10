@@ -13,7 +13,17 @@ public class Anlage {
         this.inbetriebnahme = inbetriebnahme;
         this.bezeichung = bezeichung;
     }
+    public void berechne(){
+        
+        bishAFA=ak/nutzungsdauer*bishND;
+        AFAJahr=ak/nutzungsdauer;   
+        vorAFA=ak-bishAFA;
+    }
 
+    public void setBishND(double bishND) {
+        this.bishND = bishND;
+    }
+   
 
     public int getAk() {
         return ak;
