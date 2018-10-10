@@ -2,12 +2,13 @@
 
 
 public class Anlage {
-    private int ak,nutzungsdauer;
+    private int ak;
+    Double nutzungsdauer;
     private double bishND,bishAFA,vorAFA,AFAJahr,buchwert;
     private double inbetriebnahme;
     private String bezeichung;
 
-    public Anlage(int ak, int nutzungsdauer, Double inbetriebnahme, String bezeichung) {
+    public Anlage(int ak, Double nutzungsdauer, Double inbetriebnahme, String bezeichung) {
         this.ak = ak;
         this.nutzungsdauer = nutzungsdauer;
         this.inbetriebnahme = inbetriebnahme;
@@ -42,13 +43,8 @@ public class Anlage {
     }
     
 
-    public void setBishND(double bishND) {
-        if(bishND<=0){
-            this.bishND = 0;
-        }
-        else{
+    public void setBishND(double bishND) {  
             this.bishND = bishND;
-        }
     }
    
 
@@ -56,9 +52,11 @@ public class Anlage {
         return ak;
     }
 
-    public int getNutzungsdauer() {
+    public Double getNutzungsdauer() {
         return nutzungsdauer;
     }
+
+    
 
     public double getBishND() {
         return bishND;

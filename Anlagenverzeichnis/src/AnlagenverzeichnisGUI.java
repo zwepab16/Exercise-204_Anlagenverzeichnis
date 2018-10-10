@@ -26,7 +26,9 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
             br.readLine();
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(";");
-                        model.add(new Anlage(Integer.parseInt(parts[1].replace(".", "")),Integer.parseInt(parts[3]), Double.parseDouble(parts[2].replace(",", ".")), parts[0]));
+                System.out.println(Integer.parseInt(parts[1].replace(".","")));
+                System.out.println(Double.parseDouble(parts[2].replace(",",".")));
+                        model.add(new Anlage(Integer.parseInt(parts[1].replace(".","")),Double.parseDouble(parts[3].replace(",",".")), Double.parseDouble(parts[2].replace(",",".")), parts[0]));
                     }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -97,15 +99,15 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
      int i=Integer.parseInt(cbJahr.getSelectedItem().toString());
-<<<<<<< Updated upstream
+
 
      model.setBisherigeND(i);
 
     
 
-=======
+
      model.setBisherigeND(i);
->>>>>>> Stashed changes
+
     }//GEN-LAST:event_btUpdateActionPerformed
 
    
