@@ -97,11 +97,15 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
      int i=Integer.parseInt(cbJahr.getSelectedItem().toString());
+<<<<<<< Updated upstream
 
      model.setBisherigeND(i);
 
     
 
+=======
+     model.setBisherigeND(i);
+>>>>>>> Stashed changes
     }//GEN-LAST:event_btUpdateActionPerformed
 
    
