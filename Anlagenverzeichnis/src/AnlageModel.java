@@ -46,15 +46,19 @@ public class AnlageModel extends AbstractTableModel{
     }
     public void setBisherigeND(int i){
         for (Anlage anlage : list) {
+           if((double)i-anlage.getInbetriebnahme()>anlage.getNutzungsdauer()){
+               anlage.setBishND(anlage.getNutzungsdauer());
+           }else{
          anlage.setBishND((double)i-anlage.getInbetriebnahme());
-<<<<<<< HEAD
-         
-=======
->>>>>>> master
+           }
+        anlage.berechne();
         }
+        
         fireTableDataChanged();
+        
             
         }
+    
     
 
 
