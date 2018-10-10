@@ -44,10 +44,10 @@ public class AnlageModel extends AbstractTableModel{
         list.add(a);
         fireTableRowsInserted(list.size()-1, list.size()-1);
     }
-    public void setBisherige(int i){
+    public void setBisherigeND(int i){
         for (Anlage anlage : list) {
          anlage.setBishND((double)i-anlage.getInbetriebnahme());
-         anlage
+         
         }
         fireTableDataChanged();
             

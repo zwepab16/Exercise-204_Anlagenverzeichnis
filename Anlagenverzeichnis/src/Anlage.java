@@ -13,12 +13,7 @@ public class Anlage {
         this.inbetriebnahme = inbetriebnahme;
         this.bezeichung = bezeichung;
     }
-    public void berechne(){
-        
-        bishAFA=ak/nutzungsdauer*bishND;
-        AFAJahr=ak/nutzungsdauer;   
-        vorAFA=ak-bishAFA;
-    }
+    
 
     public void setBishND(double bishND) {
         this.bishND = bishND;
@@ -38,15 +33,15 @@ public class Anlage {
     }
 
     public double getBishAFA() {
-        return bishAFA;
+        return ak/nutzungsdauer*bishND;
     }
 
     public double getVorAFA() {
-        return vorAFA;
+        return ak-bishAFA;
     }
 
     public double getAFAJahr() {
-        return AFAJahr;
+        return ak/nutzungsdauer;
     }
 
     public double getBuchwert() {
