@@ -27,15 +27,15 @@ public class AnlageModel extends AbstractTableModel{
     public Object getValueAt(int i, int i1) {
         Anlage a = list.get(i);
             switch(i1){
-                case 1:return a.getBezeichung();
-                case 2:return a.getAk();
-                case 3:return a.getInbetriebnahme();
-                case 4:return a.getNutzungsdauer();
-                case 5:return a.getBishND();
-                case 6:return a.getBishAFA();
-                case 7:return a.getVorAFA();
-                case 8:return a.getAFAJahr();
-                case 9:return a.getBuchwert();
+                case 0:return a.getBezeichung();
+                case 1:return a.getAk();
+                case 2:return a.getInbetriebnahme();
+                case 3:return a.getNutzungsdauer();
+                case 4:return a.getBishND();
+                case 5:return a.getBishAFA();
+                case 6:return a.getVorAFA();
+                case 7:return a.getAFAJahr();
+                case 8:return a.getBuchwert();
                 default:return "Empty";
             }
     }

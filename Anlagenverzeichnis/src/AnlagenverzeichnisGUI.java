@@ -1,4 +1,12 @@
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
+
+
 public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
 
     private AnlageModel model=new AnlageModel();
@@ -6,12 +14,29 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
     public AnlagenverzeichnisGUI() {
         initComponents();
         befülle();
-        
+        jTable1.setModel(model);
+        load();
     }
     public void befülle(){
        for(int i=2010;i<=2020;i++) cbJahr.addItem(""+i);
     }
 
+    
+    private void load(){
+        try (BufferedReader br = new BufferedReader(new FileReader(".\\anlagenverzeichnis.csv"))) {
+           
+            String line = null;
+            br.readLine();
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(";");
+                        model.add(new Anlage(Integer.parseInt(parts[1].replace(".", "")),Integer.parseInt(parts[3]), Double.parseDouble(parts[2].replace(",", ".")), parts[0]));
+                    }
+            
+
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
