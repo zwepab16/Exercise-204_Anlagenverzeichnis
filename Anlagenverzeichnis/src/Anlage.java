@@ -21,7 +21,12 @@ public class Anlage {
     }
 
     public void setBishND(double bishND) {
-        this.bishND = bishND;
+        if(bishND<=0){
+            this.bishND = 0;
+        }
+        else{
+            this.bishND = bishND;
+        }
     }
    
 

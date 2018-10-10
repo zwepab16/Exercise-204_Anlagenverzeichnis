@@ -31,6 +31,7 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
+        model.setBisherige(Integer.parseInt(cbJahr.getSelectedItem().toString()));
     }
     
     @SuppressWarnings("unchecked")
@@ -96,7 +97,7 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
 
     private void btUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateActionPerformed
      int i=Integer.parseInt(cbJahr.getSelectedItem().toString());
-     model.berechne(i);
+     model.setBisherige(i);
     }//GEN-LAST:event_btUpdateActionPerformed
 
    

@@ -47,7 +47,6 @@ public class AnlageModel extends AbstractTableModel{
     public void setBisherige(int i){
         for (Anlage anlage : list) {
          anlage.setBishND((double)i-anlage.getInbetriebnahme());
-         anlage
         }
         fireTableDataChanged();
             
