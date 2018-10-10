@@ -6,20 +6,43 @@ import javax.swing.table.AbstractTableModel;
 
 public class AnlageModel extends AbstractTableModel{
     private ArrayList<Anlage> list=new ArrayList();
+    private static final String[] COLNAMES = {"Bezeichnung","AK","Inbetriebnahme","ND","bish. ND","AfA bisher","Wert vor ...","AfA d. J.","BW 31.12"};
 
     @Override
+    public String getColumnName(int i) {
+        return COLNAMES[i];
+    }
+    
+    @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return list.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return COLNAMES.length;
     }
 
     @Override
     public Object getValueAt(int i, int i1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Anlage a = list.get(i);
+            switch(i1){
+                case 1:return a.getBezeichung();
+                case 2:return a.getAk();
+                case 3:return a.getInbetriebnahme();
+                case 4:return a.getNutzungsdauer();
+                case 5:return a.getBishND();
+                case 6:return a.getBishAFA();
+                case 7:return a.getVorAFA();
+                case 8:return a.getAFAJahr();
+                case 9:return a.getBuchwert();
+                default:return "Empty";
+            }
+    }
+    
+    public void add(Anlage a){
+        list.add(a);
+        fireTableRowsInserted(list.size()-1, list.size()-1);
     }
 
 }
